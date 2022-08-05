@@ -1,5 +1,19 @@
 package com.solvd.taxiCompany.enums;
 
 public enum LicenseCategory {
-    A, B, C, D, M
+    A("Motorcycles"),
+    B("Cars, small trucks"),
+    C("Trucks"),
+    D("Buses"),
+    M("Mopeds");
+    private final String value;
+
+    LicenseCategory(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+
+    }
 }

@@ -9,7 +9,6 @@ public class License {
     private LocalDate dateFrom;
     private LocalDate validUntil;
 
-
     private String description;
     private LicenseCategory licenseCategory;
 
