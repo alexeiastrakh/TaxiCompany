@@ -22,4 +22,10 @@ public class LightCar extends Car {
         this.babyChair = babyChair;
     }
 
+    @Override
+    public String toString() {
+        return "LightCar{" +getBrand()+getModel()+
+                "babyChair=" + babyChair +
+                '}';
+    }
 }

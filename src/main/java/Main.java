@@ -15,10 +15,10 @@ public class Main {
      LightCar standard = new LightCar("Renault","Renault Logan",false);
      License license = new License(LocalDate.of(2011, 1, 8),
                 LocalDate.of(2023, 1, 8),LicenseCategory.B);
-        Driver driver = new Driver(license,"James","Bond");
         Dispatcher dispatcher = new Dispatcher("Magnus","Carlsen");
-        Taxi taxi = new Taxi(limousine,driver);
         Passenger passenger = new Passenger("Cristiano","Ronaldo");
+        Driver driver = new Driver(license,"James","Bond");
+        Taxi taxi = new Taxi(limousine,driver);
         Order order = new Order(passenger,"Khreshatyk 1","Vokzalnaya 1",56,dispatcher,taxi);
 
       order.setPrice();

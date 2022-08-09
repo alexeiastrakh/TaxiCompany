@@ -27,4 +27,11 @@ public class Taxi {
         this.driver = driver;
     }
 
+    @Override
+    public String toString() {
+        return "Taxi{" +
+                "car=" + car +
+                ", driver=" + driver +
+                '}';
+    }
 }

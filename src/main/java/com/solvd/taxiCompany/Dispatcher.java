@@ -76,5 +76,11 @@ public class Dispatcher extends Employee implements IDispatcher {
             return  distance / 30;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Dispatcher{"+ getFirstName()+" "+getLastName()+
+                '}';
+    }
 }
 

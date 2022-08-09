@@ -1,5 +1,8 @@
 package com.solvd.taxiCompany;
 
+import com.solvd.taxiCompany.exception.ZeroLengthBodyCargoTaxiException;
+
+
 public class CargoTaxi extends Car{
     private int length;
 
@@ -13,13 +16,24 @@ public class CargoTaxi extends Car{
     }
 
 
-    public int getLoadCapacity() {
+    public int getLength() {
         return length;
     }
 
-    public void setLoadCapacity(int loadCapacity) {
-        this.length = loadCapacity;
+    public void setLength(int length) throws ZeroLengthBodyCargoTaxiException {
+        if (length >= 0) {
+            this.length = length;
+        } else {
+            throw new ZeroLengthBodyCargoTaxiException("Length can't be less than zero");
+        }
+
     }
 
 
+    @Override
+    public String toString() {
+        return "CargoTaxi{" +getBrand()+getModel()+
+                "length=" + length +
+                '}';
+    }
 }

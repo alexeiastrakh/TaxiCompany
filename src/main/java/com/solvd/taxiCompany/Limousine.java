@@ -33,4 +33,12 @@ public class Limousine extends Car{
     public void setBar(boolean bar) {
         this.bar = bar;
     }
+
+    @Override
+    public String toString() {
+        return "Limousine{" +getBrand()+getModel()+
+                "bar=" + bar +
+                ", TV=" + TV +
+                '}';
+    }
 }
