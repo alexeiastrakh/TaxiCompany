@@ -9,11 +9,13 @@ public class Limousine extends Car{
     public Limousine() {
     }
 
-    public Limousine(int capacity, String engineType, boolean TV,boolean bar) {
-        super(capacity);
-        this.TV = TV;
+    public Limousine(String brand, String model, boolean bar,boolean TV) {
+        super(brand, model);
         this.bar = bar;
+        this.TV = TV;
     }
+
+
     public boolean isTV() {
         return TV;
     }

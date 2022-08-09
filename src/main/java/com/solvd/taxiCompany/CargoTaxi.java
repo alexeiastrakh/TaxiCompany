@@ -1,22 +1,24 @@
 package com.solvd.taxiCompany;
 
 public class CargoTaxi extends Car{
-    private int loadCapacity;
+    private int length;
+
 
     public CargoTaxi() {
     }
 
-    public CargoTaxi(int capacity, int loadCapacity) {
-        super(capacity);
-        this.loadCapacity = loadCapacity;
+    public CargoTaxi( String brand, String model, int length) {
+        super( brand, model);
+        this.length = length;
     }
 
+
     public int getLoadCapacity() {
-        return loadCapacity;
+        return length;
     }
 
     public void setLoadCapacity(int loadCapacity) {
-        this.loadCapacity = loadCapacity;
+        this.length = loadCapacity;
     }
 
 

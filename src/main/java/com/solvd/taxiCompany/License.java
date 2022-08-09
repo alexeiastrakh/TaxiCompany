@@ -16,10 +16,13 @@ public class License {
     public License() {
     }
 
-    public License(LocalDate dateFrom, LocalDate validUntil) {
+    public License(LocalDate dateFrom, LocalDate validUntil,LicenseCategory licenseCategory) {
         this.dateFrom = dateFrom;
         this.validUntil = validUntil;
+        this.licenseCategory = licenseCategory;
     }
+
+
 
     public void setDateFrom(LocalDate dateFrom) {
         this.dateFrom = dateFrom;

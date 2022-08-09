@@ -4,26 +4,38 @@ import com.solvd.taxiCompany.enums.EngineType;
 
 public abstract class Car {
 
-    private int capacity;
+    private String model;
+
+    private String brand;
+
+
     private EngineType engineType;
 
     public Car() {
     }
 
-    public Car(int capacity) {
+    public Car(String brand,String model) {
 
-        this.capacity = capacity;
+        this.brand=brand;
+        this.model=model;
+    }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
 
 
 

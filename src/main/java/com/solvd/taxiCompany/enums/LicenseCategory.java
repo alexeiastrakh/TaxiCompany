@@ -6,14 +6,14 @@ public enum LicenseCategory {
     C("Trucks"),
     D("Buses"),
     M("Mopeds");
-    private final String value;
+    private final String licenseCategory;
 
     LicenseCategory(String value) {
-        this.value = value;
+        this.licenseCategory = value;
     }
 
-    public String getValue() {
-        return value;
+    public String getLicenseCategory() {
+        return licenseCategory;
 
     }
 }

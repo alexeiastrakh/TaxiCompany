@@ -5,14 +5,14 @@ public enum EngineType {
     GASOLINE("Gasoline"),
     ELECTRIC("Electric"),
     DIESEL("Diesel");
-    private final String value;
+    private final String engineType;
 
     EngineType(String value) {
-        this.value = value;
+        this.engineType = value;
     }
 
-    public String getValue() {
-        return value;
+    public String getEngineType() {
+        return engineType;
 
     }
 }

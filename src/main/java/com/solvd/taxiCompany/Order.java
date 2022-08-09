@@ -1,27 +1,53 @@
 package com.solvd.taxiCompany;
 
+import com.solvd.taxiCompany.exception.ZeroDistanceException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class Order {
 
+
     private Passenger passenger;
-    private int destination;
+    private String destination;
+
+    private String startPoint;
+
+    private int duration;
     private double distance;
-    private double amount;
+    private double price;
     private Dispatcher dispatcher;
-    private Tariff tariff;
     private Taxi taxi;
+
+
 
     public Order() { }
 
-    public Order(Passenger passenger,int destination,double distance, double amount,Dispatcher dispatcher,Tariff tariff,Taxi taxi) {
+    public Order(Passenger passenger,String destination,String startPoint,double distance,Dispatcher dispatcher,Taxi taxi) {
         this.passenger = passenger;
         this.destination = destination;
         this.distance = distance;
-        this.amount = amount;
+        this.startPoint = startPoint;
         this.dispatcher = dispatcher;
-        this.tariff = tariff;
         this.taxi = taxi;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration() throws ZeroDistanceException {
+        duration= (int) dispatcher.CalculateDuration(taxi.getCar(),distance);
+        this.duration = duration;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice() throws ZeroDistanceException {
+        price=dispatcher.CalculatePrice(taxi.getCar(),distance);
+        this.price = price;
+    }
 
     public Passenger getPassenger() {
         return passenger;
@@ -33,11 +59,11 @@ public class Order {
 
 
 
-    public int getDestination() {
+    public String getDestination() {
         return destination;
     }
 
-    public void setDestination(int destination) {
+    public void setDestination(String destination) {
         this.destination = destination;
     }
 
@@ -53,31 +79,12 @@ public class Order {
 
 
 
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-
-
     public com.solvd.taxiCompany.Dispatcher getDispatcher() {
         return dispatcher;
     }
 
     public void setDispatcher(com.solvd.taxiCompany.Dispatcher dispatcher) {
         this.dispatcher = dispatcher;
-    }
-
-
-    public Tariff getTariff() {
-        return tariff;
-    }
-
-    public void setTariff(Tariff tariff) {
-        this.tariff = tariff;
     }
 
 
@@ -89,6 +96,15 @@ public class Order {
     public void setTaxi(Taxi taxi) {
         this.taxi = taxi;
     }
+
+    public String getStartPoint() {
+        return startPoint;
+    }
+
+    public void setStartPoint(String startPoint) {
+        this.startPoint = startPoint;
+    }
+
 
 
 
