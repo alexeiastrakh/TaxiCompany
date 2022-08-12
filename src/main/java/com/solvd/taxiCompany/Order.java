@@ -31,9 +31,9 @@ public class Order {
         this.startPoint = startPoint;
         LOGGER.info("You are coming from "+startPoint);
         this.dispatcher = dispatcher;
-        LOGGER.info("Your dispatcher"+dispatcher);
+        LOGGER.info("Your dispatcher: "+dispatcher);
         this.taxi = taxi;
-        LOGGER.info("Your taxi"+taxi);
+        LOGGER.info("Your taxi: "+taxi);
     }
 
     public int getDuration() {
@@ -42,7 +42,7 @@ public class Order {
 
     public void setDuration() throws ZeroDistanceException {
         duration= (int) dispatcher.CalculateDuration(taxi.getCar(),distance);
-        LOGGER.info("Duration trip = "+duration);
+        LOGGER.info("Duration trip = "+duration+" hour");
         this.duration = duration;
     }
 

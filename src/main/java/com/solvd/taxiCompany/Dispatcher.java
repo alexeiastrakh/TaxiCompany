@@ -79,8 +79,8 @@ public class Dispatcher extends Employee implements IDispatcher {
 
     @Override
     public String toString() {
-        return "Dispatcher{"+ getFirstName()+" "+getLastName()+
-                '}';
+        return  getFirstName()+" "+getLastName()
+                ;
     }
 }
 

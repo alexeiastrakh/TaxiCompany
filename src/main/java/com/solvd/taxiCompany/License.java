@@ -10,6 +10,9 @@ public class License {
     private LocalDate validUntil;
 
     private String description;
+
+
+
     private LicenseCategory licenseCategory;
 
 
@@ -46,5 +49,12 @@ public class License {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public LicenseCategory getLicenseCategory() {
+        return licenseCategory;
+    }
+
+    public void setLicenseCategory(LicenseCategory licenseCategory) {
+        this.licenseCategory = licenseCategory;
     }
 }

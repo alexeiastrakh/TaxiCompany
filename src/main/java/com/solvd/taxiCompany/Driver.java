@@ -12,7 +12,7 @@ public class Driver extends Employee implements IDriver {
     protected static final Logger LOGGER = Logger.getLogger(Driver.class);
     private License license;
     Order order;
-    ArrayList<Passenger> passengers = new ArrayList<>();
+    ArrayList<String> passengers = new ArrayList<>();
     public Driver() {
     }
 
@@ -30,17 +30,28 @@ public class Driver extends Employee implements IDriver {
         return license;
     }
 
-    public void showPassengers() {
-        passengers.addAll((Collection<? extends Passenger>) order.getPassenger());
+
+
+
+
+    public void showPassengers(Passenger passenger) {
+        passengers.add(passenger.getLastName());
         if (passengers.size() == 0) {
             throw new PassengersNotFoundException("Can't find passengers");
 
         } else {
-            passengers.stream().forEach(e -> LOGGER.info("Passengers" + ":\n" + e));
+            LOGGER.info("I am a driver "+getFirstName()+" "+getLastName()+" and today I took such passengers");
+            passengers.stream().forEach(p -> LOGGER.info("Passenger : "  + p));
 
 
         }
 
+    }
+    @Override
+    public String toString() {
+        return "Driver{" +getFirstName()+" "+getLastName()+
+                ", license category-" + license.getLicenseCategory() +
+                '}';
     }
 
 
@@ -50,10 +61,4 @@ public class Driver extends Employee implements IDriver {
     }
 
 
-    @Override
-    public String toString() {
-        return "Driver{" +
-                getFirstName()+getLastName()+" ";
-
-    }
 }
