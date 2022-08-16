@@ -6,12 +6,10 @@ import org.apache.log4j.Logger;
 
 public class Order {
 
-    protected static final Logger LOGGER = Logger.getLogger(Order.class);
+    protected static final Logger LOGGER = LogManager.getLogger(Order.class);
     private Passenger passenger;
     private String destination;
-
     private String startPoint;
-
     private int duration;
     private double distance;
     private double price;
@@ -50,10 +48,11 @@ public class Order {
         return price;
     }
 
-    public void setPrice() throws ZeroDistanceException {
+    public double setPrice() throws ZeroDistanceException {
         price=dispatcher.CalculatePrice(taxi.getCar(),distance);
         LOGGER.info("Trip price = "+price);
         this.price = price;
+        return 0;
     }
 
     public Passenger getPassenger() {

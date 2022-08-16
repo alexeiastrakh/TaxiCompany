@@ -24,8 +24,8 @@ public class Main {
 
       order.setPrice();
       order.setDuration();
-      driver.showPassengers(passenger);
-
+     // driver.showPassengers(passenger);
+      dispatcher.getHighestPrice(order);
 
     }
 }

@@ -35,7 +35,7 @@ public abstract class Person {
     }
     public void setLastName(String lastName) throws IncorrectNameException {
         if (lastName.isEmpty()) {
-            throw new IncorrectNameException("First name can't be empty");
+            throw new IncorrectNameException("Last name can't be empty");
         } else {
             this.lastName = lastName;
         }

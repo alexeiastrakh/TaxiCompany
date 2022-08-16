@@ -9,12 +9,10 @@ public class Passenger extends Person implements IPassenger {
 
     public Passenger() {
     }
-
     public Passenger(String firstName, String lastName)  {
         super(firstName, lastName);
 
     }
-
     @Override
     public void makeOrder() {
 

@@ -15,25 +15,18 @@ public class Driver extends Employee implements IDriver {
     ArrayList<String> passengers = new ArrayList<>();
     public Driver() {
     }
-
     public Driver(License license, String name, String surname) {
         super(name, surname);
         this.license = license;
 
     }
-
     public void setLicense(License license) {
         this.license = license;
     }
-
     public License getLicense() {
         return license;
     }
-
-
-
-
-
+    @Override
     public void showPassengers(Passenger passenger) {
         passengers.add(passenger.getLastName());
         if (passengers.size() == 0) {
@@ -42,8 +35,6 @@ public class Driver extends Employee implements IDriver {
         } else {
             LOGGER.info("I am a driver "+getFirstName()+" "+getLastName()+" and today I took such passengers");
             passengers.stream().forEach(p -> LOGGER.info("Passenger : "  + p));
-
-
         }
 
     }

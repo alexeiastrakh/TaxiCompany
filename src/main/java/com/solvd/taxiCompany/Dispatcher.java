@@ -2,10 +2,15 @@ package com.solvd.taxiCompany;
 
 import com.solvd.taxiCompany.exception.ZeroDistanceException;
 import com.solvd.taxiCompany.interfaces.IDispatcher;
+import org.apache.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dispatcher extends Employee implements IDispatcher {
 
-
+    protected static final Logger LOGGER = Logger.getLogger(Dispatcher.class);
+    List<Double> prices = new ArrayList<>();
     public Dispatcher() {
     }
 
@@ -23,12 +28,18 @@ public class Dispatcher extends Employee implements IDispatcher {
     public void sendOrder() {
 
     }
-
+    public <T> T getHighestPrice(Order order) {
+        prices.add((order.getPrice()));
+       T highestPrice = (T) prices.stream().max(Double::compare).get();
+       LOGGER.info("Highest price: "+highestPrice);
+       return highestPrice;
+    }
+    @Override
     public double CalculatePrice(Car car, double distance) throws ZeroDistanceException {
         if (distance <= 0) {
             throw new ZeroDistanceException();
         }
-        if (car instanceof CargoTaxi)
+       if (car instanceof CargoTaxi)
         {
             return distance * 9;
 
@@ -54,7 +65,11 @@ public class Dispatcher extends Employee implements IDispatcher {
            }
             return distance * 13;
         }
+
+
     }
+
+    @Override
     public double CalculateDuration(Car car, double distance) throws ZeroDistanceException {
         if (distance <= 0) {
             throw new ZeroDistanceException();
