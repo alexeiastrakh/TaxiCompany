@@ -19,15 +19,8 @@ public class Dispatcher extends Employee implements IDispatcher {
 
     }
 
-    @Override
-    public void takeOrder() {
 
-    }
 
-    @Override
-    public void sendOrder() {
-
-    }
     public <T> T getHighestPrice(Order order) {
         prices.add((order.getPrice()));
        T highestPrice = (T) prices.stream().max(Double::compare).get();

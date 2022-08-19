@@ -1,10 +1,7 @@
 package com.solvd.taxiCompany;
 
 
-import com.solvd.taxiCompany.interfaces.IPassenger;
-import org.apache.log4j.Logger;
-
-public class Passenger extends Person implements IPassenger {
+public class Passenger extends Person{
 
 
     public Passenger() {
@@ -13,8 +10,5 @@ public class Passenger extends Person implements IPassenger {
         super(firstName, lastName);
 
     }
-    @Override
-    public void makeOrder() {
 
-    }
 }

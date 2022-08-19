@@ -4,6 +4,7 @@ import com.solvd.taxiCompany.exception.PassengersNotFoundException;
 import com.solvd.taxiCompany.interfaces.IDriver;
 import org.apache.log4j.Logger;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -15,9 +16,9 @@ public class Driver extends Employee implements IDriver {
     ArrayList<String> passengers = new ArrayList<>();
     public Driver() {
     }
-    public Driver(License license, String name, String surname) {
+    public Driver(String name, String surname) {
         super(name, surname);
-        this.license = license;
+
 
     }
     public void setLicense(License license) {
@@ -46,10 +47,6 @@ public class Driver extends Employee implements IDriver {
     }
 
 
-    @Override
-    public void drive() {
-
-    }
 
 
 }
