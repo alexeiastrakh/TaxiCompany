@@ -1,13 +1,11 @@
 package com.solvd.taxiCompany.utils;
 
-import com.solvd.taxiCompany.Car;
-import com.solvd.taxiCompany.Dispatcher;
-import com.solvd.taxiCompany.Driver;
-import com.solvd.taxiCompany.Taxi;
+import com.solvd.taxiCompany.*;
+import com.solvd.taxiCompany.interfaces.ITaxiUtil;
 
 import java.util.ArrayList;
 
-public class TaxiUtil {
+public class TaxiUtil implements ITaxiUtil<Taxi> {
     public static ArrayList<Taxi> createTaxi() {
         ArrayList<Taxi> taxi = new ArrayList<>();
         Driver driver = DriverUtil.createDrivers().get(0);
@@ -23,4 +21,11 @@ public class TaxiUtil {
 
         return taxi;
     }
+
+    @Override
+    public Taxi filterTaxiByCar(ArrayList<Taxi> taxi) {
+        return taxi.stream().filter(CarUtil.createCars().get(0)::equals).
+                findFirst().get();
+    }
+
 }

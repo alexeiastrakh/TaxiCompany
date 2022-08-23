@@ -5,6 +5,7 @@ import com.solvd.taxiCompany.interfaces.IDriver;
 import org.apache.log4j.Logger;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -18,8 +19,6 @@ public class Driver extends Employee implements IDriver {
     }
     public Driver(String name, String surname) {
         super(name, surname);
-
-
     }
     public void setLicense(License license) {
         this.license = license;
@@ -37,7 +36,6 @@ public class Driver extends Employee implements IDriver {
             LOGGER.info("I am a driver "+getFirstName()+" "+getLastName()+" and today I took such passengers");
             passengers.stream().forEach(p -> LOGGER.info("Passenger : "  + p));
         }
-
     }
     @Override
     public String toString() {
@@ -45,8 +43,4 @@ public class Driver extends Employee implements IDriver {
                 ", license category-" + license.getLicenseCategory() +
                 '}';
     }
-
-
-
-
 }

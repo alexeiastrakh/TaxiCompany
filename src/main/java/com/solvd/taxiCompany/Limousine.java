@@ -1,6 +1,6 @@
 package com.solvd.taxiCompany;
 
-public class Limousine extends Car{
+public class Limousine extends Car {
 
 
     private boolean bar;
@@ -9,7 +9,7 @@ public class Limousine extends Car{
     public Limousine() {
     }
 
-    public Limousine(String brand, String model, boolean bar,boolean TV) {
+    public Limousine(String brand, String model, boolean bar, boolean TV) {
         super(brand, model);
         this.bar = bar;
         this.TV = TV;
@@ -25,7 +25,6 @@ public class Limousine extends Car{
     }
 
 
-
     public boolean isBar() {
         return bar;
     }
@@ -36,7 +35,7 @@ public class Limousine extends Car{
 
     @Override
     public String toString() {
-        return "Limousine{" +getBrand()+getModel()+
+        return "Limousine{" + getBrand() + getModel() +
                 "bar=" + bar +
                 ", TV=" + TV +
                 '}';

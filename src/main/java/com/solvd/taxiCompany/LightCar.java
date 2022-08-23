@@ -13,7 +13,6 @@ public class LightCar extends Car {
     }
 
 
-
     public boolean isBabyChair() {
         return babyChair;
     }
@@ -24,7 +23,7 @@ public class LightCar extends Car {
 
     @Override
     public String toString() {
-        return "LightCar{" +getBrand()+getModel()+
+        return "LightCar{" + getBrand() + getModel() +
                 "babyChair=" + babyChair +
                 '}';
     }

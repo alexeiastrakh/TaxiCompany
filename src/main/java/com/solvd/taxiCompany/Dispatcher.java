@@ -2,6 +2,7 @@ package com.solvd.taxiCompany;
 
 import com.solvd.taxiCompany.exception.ZeroDistanceException;
 import com.solvd.taxiCompany.interfaces.IDispatcher;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -89,6 +90,9 @@ public class Dispatcher extends Employee implements IDispatcher {
     public String toString() {
         return  getFirstName()+" "+getLastName()
                 ;
+    }
+    public void isEmpty(String string){
+        if(StringUtils.isEmpty(string)) { throw new IllegalArgumentException("This field cannot be empty");}
     }
 }
 

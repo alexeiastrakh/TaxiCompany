@@ -1,5 +1,4 @@
 import com.solvd.taxiCompany.*;
-import com.solvd.taxiCompany.enums.LicenseCategory;
 import com.solvd.taxiCompany.exception.ZeroDistanceException;
 
 import java.time.LocalDate;
@@ -19,16 +18,12 @@ public class Main {
         Dispatcher dispatcher= DispatcherUtil.createDispatchers().get(0);
         Taxi taxi = TaxiUtil.createTaxi().get(0);
         String destination = scanner.nextLine();
-        if(StringUtils.isEmpty(destination)) { throw new IllegalArgumentException("Destination cannot be empty");}
+        dispatcher.isEmpty(destination);
         String startPoint=scanner.nextLine();
-        if(StringUtils.isEmpty(startPoint)) { throw new IllegalArgumentException("Start point cannot be empty");}
+        dispatcher.isEmpty(startPoint);
         double distance = RandomUtils.nextDouble(10.0, 300.0);
         dispatcher.CalculateDuration(taxi.getCar(), distance);
         dispatcher.CalculatePrice(taxi.getCar(), distance);
-
-
-
-
 
     }
 }
