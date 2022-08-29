@@ -1,9 +1,8 @@
 package com.solvd.taxiCompany.utils;
 
-import com.solvd.taxiCompany.Dispatcher;
-import com.solvd.taxiCompany.Driver;
-
 import java.util.ArrayList;
+import com.solvd.taxiCompany.Dispatcher;
+
 
 public class DispatcherUtil {
     public static ArrayList<Dispatcher> createDispatchers() {

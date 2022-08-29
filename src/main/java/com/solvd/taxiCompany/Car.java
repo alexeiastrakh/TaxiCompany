@@ -14,10 +14,10 @@ public abstract class Car {
     public Car() {
     }
 
-    public Car(String brand,String model) {
+    public Car(String brand, String model) {
 
-        this.brand=brand;
-        this.model=model;
+        this.brand = brand;
+        this.model = model;
     }
 
     public String getBrand() {
@@ -27,6 +27,7 @@ public abstract class Car {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
     public String getModel() {
         return model;
     }
@@ -34,9 +35,6 @@ public abstract class Car {
     public void setModel(String model) {
         this.model = model;
     }
-
-
-
 
 
 }

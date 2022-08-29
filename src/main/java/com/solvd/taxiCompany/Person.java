@@ -2,13 +2,10 @@ package com.solvd.taxiCompany;
 
 import com.solvd.taxiCompany.exception.IncorrectNameException;
 
-import java.time.LocalDate;
-
 public abstract class Person {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-
 
 
     public Person() {}
@@ -17,8 +14,6 @@ public abstract class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-
 
     public String getFirstName() {
         return firstName;
@@ -30,6 +25,7 @@ public abstract class Person {
             this.firstName = firstName;
         }
     }
+
     public String getLastName() {
         return lastName;
     }

@@ -1,13 +1,9 @@
 package com.solvd.taxiCompany;
 
+import java.util.ArrayList;
+import org.apache.log4j.Logger;
 import com.solvd.taxiCompany.exception.PassengersNotFoundException;
 import com.solvd.taxiCompany.interfaces.IDriver;
-import org.apache.log4j.Logger;
-
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
 
 
 public class Driver extends Employee implements IDriver {
@@ -26,6 +22,7 @@ public class Driver extends Employee implements IDriver {
     public License getLicense() {
         return license;
     }
+
     @Override
     public void showPassengers(Passenger passenger) {
         passengers.add(passenger.getLastName());
@@ -37,6 +34,7 @@ public class Driver extends Employee implements IDriver {
             passengers.stream().forEach(p -> LOGGER.info("Passenger : "  + p));
         }
     }
+
     @Override
     public String toString() {
         return "Driver{" +getFirstName()+" "+getLastName()+

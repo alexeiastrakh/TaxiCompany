@@ -1,8 +1,7 @@
 package com.solvd.taxiCompany;
 
-import com.solvd.taxiCompany.enums.LicenseCategory;
-
 import java.time.LocalDate;
+import com.solvd.taxiCompany.enums.LicenseCategory;
 
 public class License {
 

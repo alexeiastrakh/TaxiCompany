@@ -1,12 +1,12 @@
 package com.solvd.taxiCompany.utils;
 
-import com.solvd.taxiCompany.Driver;
-import com.solvd.taxiCompany.Passenger;
-
 import java.util.ArrayList;
+import com.solvd.taxiCompany.Driver;
+
+
+
 
 public class DriverUtil {
-
     public static ArrayList<Driver> createDrivers() {
         ArrayList<Driver> drivers = new ArrayList<>();
         Driver driver = new Driver("James","Bond");

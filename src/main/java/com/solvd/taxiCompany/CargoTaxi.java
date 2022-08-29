@@ -3,18 +3,16 @@ package com.solvd.taxiCompany;
 import com.solvd.taxiCompany.exception.ZeroLengthBodyCargoTaxiException;
 
 
-public class CargoTaxi extends Car{
+public class CargoTaxi extends Car {
     private int length;
-
 
     public CargoTaxi() {
     }
 
-    public CargoTaxi( String brand, String model, int length) {
-        super( brand, model);
+    public CargoTaxi(String brand, String model, int length) {
+        super(brand, model);
         this.length = length;
     }
-
 
     public int getLength() {
         return length;
@@ -29,10 +27,9 @@ public class CargoTaxi extends Car{
 
     }
 
-
     @Override
     public String toString() {
-        return "CargoTaxi{" +getBrand()+getModel()+
+        return "CargoTaxi{" + getBrand() + getModel() +
                 "length=" + length +
                 '}';
     }

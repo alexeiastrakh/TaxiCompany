@@ -12,7 +12,6 @@ public class LightCar extends Car {
         this.babyChair = babyChair;
     }
 
-
     public boolean isBabyChair() {
         return babyChair;
     }

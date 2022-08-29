@@ -1,17 +1,21 @@
 package com.solvd.taxiCompany;
 
-import com.solvd.taxiCompany.exception.ZeroDistanceException;
-import com.solvd.taxiCompany.interfaces.IDispatcher;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import com.solvd.taxiCompany.interfaces.IDispatcher;
+import com.solvd.taxiCompany.exception.ZeroDistanceException;
+
+
+
+
 
 public class Dispatcher extends Employee implements IDispatcher {
 
     protected static final Logger LOGGER = Logger.getLogger(Dispatcher.class);
     List<Double> prices = new ArrayList<>();
+
     public Dispatcher() {
     }
 
@@ -20,70 +24,67 @@ public class Dispatcher extends Employee implements IDispatcher {
 
     }
 
-
-
     public <T> T getHighestPrice(Order order) {
         prices.add((order.getPrice()));
-       T highestPrice = (T) prices.stream().max(Double::compare).get();
-       LOGGER.info("Highest price: "+highestPrice);
-       return highestPrice;
-    }
-    @Override
-    public double CalculatePrice(Car car, double distance) throws ZeroDistanceException {
-        if (distance <= 0) {
-            throw new ZeroDistanceException();
-        }
-       if (car instanceof CargoTaxi)
-        {
-            return distance * 9;
-
-        }
-
-        if (car instanceof LightCar)
-        {
-            if (((LightCar) car).isBabyChair()){
-                return (distance * 8)+60;
-            }
-            return distance * 8;
-        }
-        if (car instanceof Limousine) ;
-        {
-           if(((Limousine) car).isTV()&&((Limousine) car).isBar()){
-               return (distance * 13)+310;
-           }
-            if(((Limousine) car).isBar()){
-               return (distance * 13)+170;
-           }
-            if(((Limousine) car).isTV()){
-               return (distance * 13)+140;
-           }
-            return distance * 13;
-        }
-
-
+        T highestPrice = (T) prices.stream().max(Double::compare).get();
+        LOGGER.info("Highest price: " + highestPrice);
+        return highestPrice;
     }
 
     @Override
-    public double CalculateDuration(Car car, double distance) throws ZeroDistanceException {
+    public double CalculatePrice(Car car, double distance, int carType) throws ZeroDistanceException {
         if (distance <= 0) {
             throw new ZeroDistanceException();
         }
-        if (car instanceof CargoTaxi)
-        {
+        switch (carType) {
+            case (1):
+                return distance * 9;
+            case (2):
+                if (((LightCar) car).isBabyChair()) {
+                    return (distance * 8) + 60;
+                }
+            case (3):
+                if (((Limousine) car).isTV() && ((Limousine) car).isBar()) {
+                    return (distance * 13) + 310;
+                }
+                if (((Limousine) car).isBar()) {
+                    return (distance * 13) + 170;
+                }
+                if (((Limousine) car).isTV()) {
+                    return (distance * 13) + 140;
+                }
+                return distance * 13;
 
-            return distance / 30;
+            case (4):
+
+                if (((Limousine) car).isTV() && ((Limousine) car).isBar()) {
+                    return (distance * 13) + 310;
+                }
+                if (((Limousine) car).isBar()) {
+                    return (distance * 13) + 170;
+                }
+                if (((Limousine) car).isTV()) {
+                    return (distance * 13) + 140;
+                }
+                return distance * 13;
         }
+                return 0;
 
-        if (car instanceof LightCar)
-        {
+    }
 
-            return distance / 40;
+
+
+    @Override
+    public double CalculateDuration(Car car, double distance,int carType) throws ZeroDistanceException {
+        if (distance <= 0) {
+            throw new ZeroDistanceException();
         }
-        if (car instanceof Limousine) ;
-        {
-
-            return  distance / 30;
+        switch (carType){
+            case (1) : return distance / 30;
+            case (2) : return distance / 50;
+            case (3) : return  distance / 40;
         }
+        return 0;
     }
 
     @Override

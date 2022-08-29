@@ -11,5 +11,4 @@ public class Passenger extends Person {
         super(firstName, lastName);
 
     }
-
 }

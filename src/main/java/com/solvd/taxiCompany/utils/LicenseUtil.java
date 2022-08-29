@@ -1,14 +1,13 @@
 package com.solvd.taxiCompany.utils;
 
-import com.solvd.taxiCompany.Driver;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.time.LocalDate;
 import com.solvd.taxiCompany.License;
 import com.solvd.taxiCompany.enums.LicenseCategory;
 import com.solvd.taxiCompany.interfaces.ILicenseUtil;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class LicenseUtil implements ILicenseUtil {
     public static ArrayList<License> createLicences() {
@@ -25,6 +24,7 @@ public class LicenseUtil implements ILicenseUtil {
 
         return licenses;
     }
+
     @Override
     public ArrayList<License> sortLicenseByDate(ArrayList<License> licenses) {
         return (ArrayList<License>) licenses.stream().sorted(Comparator.comparing(License::getDateTo))
