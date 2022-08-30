@@ -1,13 +1,14 @@
 import java.util.Scanner;
-import org.apache.commons.lang3.RandomUtils;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
+import com.solvd.taxiCompany.exception.ZeroDistanceException;
 import com.solvd.taxiCompany.utils.DispatcherUtil;
 import com.solvd.taxiCompany.utils.TaxiUtil;
 import com.solvd.taxiCompany.*;
-import com.solvd.taxiCompany.exception.ZeroDistanceException;
 
 
+import org.apache.commons.lang3.RandomUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Main {
     public static void main(String[] args) throws ZeroDistanceException {
@@ -30,11 +31,16 @@ public class Main {
         }
         String destination = scanner.nextLine();
         dispatcher.isEmpty(destination);
+        LOGGER.info(destination);
         String startPoint = scanner.nextLine();
         dispatcher.isEmpty(startPoint);
+        LOGGER.info(startPoint);
         double distance = RandomUtils.nextDouble(10.0, 300.0);
-        dispatcher.CalculateDuration(taxi.getCar(), distance, carType);
-        dispatcher.CalculatePrice(taxi.getCar(), distance, carType);
+        LOGGER.info("Trip duration:");
+        LOGGER.info(dispatcher.CalculateDuration(taxi.getCar(), distance, carType));
+        LOGGER.info("Trip price:");
+        LOGGER.info(dispatcher.CalculatePrice(taxi.getCar(), distance, carType));
+
 
     }
 }

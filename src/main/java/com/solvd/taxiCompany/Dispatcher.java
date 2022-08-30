@@ -69,10 +69,7 @@ public class Dispatcher extends Employee implements IDispatcher {
                 return distance * 13;
         }
                 return 0;
-
     }
-
-
 
     @Override
     public double CalculateDuration(Car car, double distance,int carType) throws ZeroDistanceException {

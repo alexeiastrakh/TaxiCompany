@@ -14,8 +14,9 @@ public class CarUtil {
         Limousine limousine = new Limousine("Mercedes-benz","MERCEDES-BENZ S-600 PULLMAN",false,true);
         LightCar standard = new LightCar("Renault","Renault Logan",false);
         cars.add(minivan);
-        cars.add(limousine);
         cars.add(standard);
+        cars.add(limousine);
+
         return cars;
     }
 }
